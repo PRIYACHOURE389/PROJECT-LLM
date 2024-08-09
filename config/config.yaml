@@ -1,0 +1,32 @@
+project:
+  name: Equity Research News Tool
+  description: A tool to fetch, summarize, and analyze news articles for equity research.
+
+api_keys:
+  openai:
+    api_key: "sk-CeO8TeSgyrNL6JhdFL1RMLvisTjDIOuOoAANg05tbHT3BlbkFJBNuiZkRhqoIndOuzdphPWyeexXjsVT8-evKzceawsA"
+  newsapi:
+    api_key: "01502dbf80e8480681d88df694c2e155"
+
+users:
+  - username: rainbow
+    password: Amoke_123
+
+langchain:
+  model: "gpt-3.5-turbo"
+  temperature: 0.7
+  max_tokens: 1500
+  rate_limits:
+    tokens_per_minute: 40000
+    requests_per_minute: 3
+    requests_per_day: 200
+    tokens_per_day: 200000
+
+streamlit:
+  title: "Equity Research News Tool"
+  sidebar_title: "Article Summaries"
+  footer: "Powered by OpenAI and NewsAPI"
+
+data:
+  input_file: "C:/Users/admin/OneDrive/Desktop/llm project/equity_research_articles.txt"
+  output_file: "C:/Users/admin/OneDrive/Desktop/llm project/output/summaries.txt"

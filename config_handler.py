@@ -1,23 +1,20 @@
 import yaml
 
-def load_config(config_path):
-    """Load the YAML configuration file."""
-    try:
-        with open(config_path, 'r') as file:
-            return yaml.safe_load(file)
-    except Exception as e:
-        raise RuntimeError(f"Error loading configuration file: {e}")
+def load_config(file_path):
+    with open(file_path, 'r') as file:
+        return yaml.safe_load(file)
 
-def setup_api_keys(config_path):
-    """Set up API keys from the configuration file."""
+config_path = r"C:\Users\admin\OneDrive\Desktop\llm project\config\config.yaml"  # Use raw string or forward slashes
+try:
     config = load_config(config_path)
-    try:
-        openai_api_key = config['openai']['api_key']
-        newsapi_key = config['newsapi']['api_key']
-        if not openai_api_key or not newsapi_key:
-            raise ValueError("API keys are missing in the configuration.")
-        return openai_api_key, newsapi_key
-    except KeyError as e:
-        raise KeyError(f"Missing key in configuration file: {e}")
-    except Exception as e:
-        raise RuntimeError(f"Error setting up API keys: {e}")
+    openai_api_key = config['api_keys']['openai']['api_key']
+    newsapi_key = config['api_keys']['newsapi']['api_key']
+    print("API keys loaded successfully.")
+    print(f"OpenAI API Key: {openai_api_key}")
+    print(f"NewsAPI Key: {newsapi_key}")
+except FileNotFoundError:
+    print(f"Error: Configuration file {config_path} not found.")
+except KeyError as e:
+    print(f"Error: Missing key {e} in the configuration file.")
+except yaml.YAMLError as exc:
+    print(f"Error parsing YAML file: {exc}")
