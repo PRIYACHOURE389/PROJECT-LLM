@@ -157,7 +157,6 @@ def main():
 
     # Load configuration
     config_path = r"C:\Users\admin\OneDrive\Desktop\llm project\config\config.yaml"
-
     config = load_config(config_path)
     if not config:
         st.stop()
