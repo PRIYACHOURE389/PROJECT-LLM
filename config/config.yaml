@@ -4,9 +4,9 @@ project:
 
 api_keys:
   openai:
-    api_key: "your_openai_api_key_here"
+    api_key: "sk-CeO8TeSgyrNL6JhdFL1RMLvisTjDIOuOoAANg05tbHT3BlbkFJBNuiZkRhqoIndOuzdphPWyeexXjsVT8-evKzceawsA"
   newsapi:
-    api_key: "your_newsapi_key_here"
+    api_key: "01502dbf80e8480681d88df694c2e155"
 
 users:
   - username: rainbow

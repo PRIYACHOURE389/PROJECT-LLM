@@ -156,7 +156,8 @@ def main():
     st.title("Equity Research News Tool")
 
     # Load configuration
-    config_path = "C:\\Users\\admin\\OneDrive\\Desktop\\llm project\\config\\config.yaml"
+    config_path = r"C:\Users\admin\OneDrive\Desktop\llm project\config\config.yaml"
+
     config = load_config(config_path)
     if not config:
         st.stop()
